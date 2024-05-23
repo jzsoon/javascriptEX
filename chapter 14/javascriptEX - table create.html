@@ -1,0 +1,74 @@
+<h1>Mountains</h1>
+
+<div id="mountains"></div>
+
+<script>
+  const MOUNTAINS = [
+    {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+    {name: "Everest", height: 8848, place: "Nepal"},
+    {name: "Mount Fuji", height: 3776, place: "Japan"},
+    {name: "Vaalserberg", height: 323, place: "Netherlands"},
+    {name: "Denali", height: 6168, place: "United States"},
+    {name: "Popocatepetl", height: 5465, place: "Mexico"},
+    {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+  ];
+  
+ //MOUNTAINS[2].height   
+
+
+  const tbl = document.createElement("table");
+  const tblBody = document.createElement("tbody");
+  
+   const column = document.createElement("tr");
+   const titleName = document.createElement("th");
+   const titleHeight = document.createElement("th");
+   const titlePlace = document.createElement("th");
+
+   const titleTextName = document.createTextNode("name");
+   const titleTextHeight = document.createTextNode("height");
+   const titleTextPlace = document.createTextNode("place");
+
+
+   titleName.appendChild(titleTextName);
+   titleHeight.appendChild(titleTextHeight);
+   titlePlace.appendChild(titleTextPlace);
+
+   column.appendChild(titleName);
+   column.appendChild(titleHeight);
+   column.appendChild(titlePlace);
+
+  
+  // Your code here
+   for (let i = 0; i < 7; i++) {
+    // creates a table row
+    const row = document.createElement("tr");
+
+    //for (let j = 0; j < 3; j++) {
+      // Create a <td> element and a text node, make the text
+      // node the contents of the <td>, and put the <td> at
+      // the end of the table row
+     const cellName = document.createElement("td");
+     const cellHeight = document.createElement("td");
+     const cellPlace = document.createElement("td");
+     const cellTextName = document.createTextNode(MOUNTAINS[i].name);
+     const cellTextHeight = document.createTextNode(MOUNTAINS[i].height);
+     const cellTextPlace = document.createTextNode(MOUNTAINS[i].place);
+     
+     cellName.appendChild(cellTextName);
+     cellHeight.appendChild(cellTextHeight);
+     cellPlace.appendChild(cellTextPlace);
+     
+     row.appendChild(cellName);
+     row.appendChild(cellHeight);
+     row.appendChild(cellPlace);
+
+     tblBody.appendChild(row);
+    //}
+}
+   const m = document.getElementById("mountains");
+   m.appendChild(column);
+   m.appendChild(tblBody);
+   
+  
+  
+</script>
